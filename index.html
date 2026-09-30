@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO -->
+  <title>Skyline Airlines — Fly in Safe, Comfort | Elegant Luxury Airline</title>
+  <meta name="description" content="Skyline Airlines — fly in safe, comfort. 47 modern aircraft connecting 89 destinations worldwide. IOSA certified, 99.2% on-time, luxury business class. Book now from $189.">
+  <meta name="keywords" content="airline, flights, Skyline, luxury airline, business class, book flights, Amman to Dubai">
+  <meta property="og:title" content="Skyline Airlines — Fly in Safe, Comfort">
+  <meta property="og:description" content="47 aircraft, 89 destinations, luxury travel since 1998.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0077B6">
+  <!-- Google Fonts - Elegant Luxury -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+</head>
+<body>
+  <!-- Accessibility: Skip to content -->
+  <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to main content</a>
+
+  <!-- Banner & Toast -->
+  <div id="banner" class="banner" role="status" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Fixed Top Navigation -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="navbar-brand" onclick="goToPage('home')" style="cursor:pointer">
+        <div class="logo-mark">✈</div>
+        <div class="brand-text">
+          <div class="brand-title">SKYLINE</div>
+          <div class="brand-tagline">Fly in Safe, Comfort</div>
+        </div>
+      </div>
+      <div class="navbar-links" role="navigation">
+        <a href="index.html" class="active" onclick="event.preventDefault();navigateTo('home')">Home</a>
+        <a href="flights.html" onclick="goToPage('flights')">Flights</a>
+        <a href="fleet.html" onclick="goToPage('fleet')">Our Fleet</a>
+        <a href="booking.html" onclick="goToPage('booking')">Book Now</a>
+        <a href="about.html" onclick="goToPage('about')">About Us</a>
+        <a href="pricing.html" onclick="goToPage('pricing')">Pricing</a>
+        <a href="faq.html" onclick="goToPage('faq')">FAQ</a>
+        <a href="contact.html" onclick="goToPage('contact')">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">🌙</button>
+        <button class="btn btn-primary" onclick="goToPage('booking')">Book Now</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleSidenav()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Side Navbar -->
+  <div id="sidenavOverlay" class="sidenav-overlay" onclick="closeSidenav()" aria-hidden="true"></div>
+  <aside id="sidenav" class="sidenav" aria-hidden="true" aria-label="Mobile menu">
+    <div class="sidenav-header">
+      <div style="display:flex;align-items:center;gap:12px;font-weight:700"><div class="logo-mark" style="width:36px;height:36px;font-size:18px">✈</div> SKYLINE</div>
+      <button class="btn" style="width:40px;height:40px;padding:0" aria-label="Close menu" onclick="closeSidenav()">✕</button>
+    </div>
+    <div class="sidenav-links" role="navigation">
+      <a href="index.html" class="active" onclick="closeSidenav()"><span class="icon">🏠</span> Home</a>
+      <a href="flights.html" onclick="closeSidenav()"><span class="icon">✈️</span> Flights</a>
+      <a href="fleet.html" onclick="closeSidenav()"><span class="icon">🛩️</span> Our Fleet - 47 Aircraft</a>
+      <a href="booking.html" onclick="closeSidenav()"><span class="icon">🎫</span> Book Now</a>
+      <a href="about.html" onclick="closeSidenav()"><span class="icon">ℹ️</span> About Us</a>
+      <a href="pricing.html" onclick="closeSidenav()"><span class="icon">💎</span> Pricing</a>
+      <a href="faq.html" onclick="closeSidenav()"><span class="icon">❓</span> FAQ</a>
+      <a href="contact.html" onclick="closeSidenav()"><span class="icon">📩</span> Contact</a>
+    </div>
+    <div class="sidenav-footer">
+      <button class="btn btn-primary" style="width:100%;height:48px" onclick="goToPage('booking');closeSidenav()">Book from $189 →</button>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:16px">
+        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+      </div>
+      <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:12px">47 aircraft • 89 destinations • 12.4M passengers • Since 1998</div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Hero - Gradient Animated + Parallax -->
+    <section id="home" class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-content">
+        <div class="hero-text fade-in">
+          <div style="display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);padding:6px 12px;border-radius:999px;font-size:12px;margin-bottom:16px;backdrop-filter:blur(8px)">
+            <span style="width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block"></span> IOSA Certified • 99.2% On-Time
+          </div>
+          <h1 class="hero-title">Fly in Safe,<br><span>Comfort</span> & Luxury</h1>
+          <p class="hero-subtitle">Skyline Airlines — a major international airline since 1998. 47 modern aircraft, average age 3.2 years, connecting 89 destinations with elegant business class and professional service you can trust.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" style="height:52px;padding:0 32px;font-size:16px;background:white;color:var(--navy);border-color:white" onclick="goToPage('booking')">Book Now — From $189</button>
+            <button class="btn" style="height:52px;padding:0 24px;background:rgba(255,255,255,0.12);color:white;border-color:rgba(255,255,255,0.25);backdrop-filter:blur(8px)" onclick="navigateTo('fleet')">Explore Fleet</button>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong data-count="12.4" data-suffix="M+">0</strong> Passengers 2024</div>
+            <div class="hero-stat"><strong data-count="47" data-suffix="">0</strong> Aircraft</div>
+            <div class="hero-stat"><strong data-count="89" data-suffix="">0</strong> Destinations</div>
+            <div class="hero-stat"><strong data-count="99.2" data-suffix="%">0</strong> Safety</div>
+          </div>
+        </div>
+        <div class="hero-visual fade-in" style="transition-delay:0.2s">
+          <!-- Use local accurate Boeing image to avoid external failures -->
+          <img src="assets/images/hero-boeing.webp" alt="Skyline Boeing 787 Dreamliner in flight at sunset - luxury airline" width="600" height="450" loading="eager" style="width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center">
+            <div><div style="font-weight:700;font-size:14px;color:var(--navy)">QR104 • AMM→DXB</div><div style="font-size:12px;color:var(--text-muted)">08:30 • Business • B787</div></div>
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--primary);color:white;display:grid;place-items:center">✈</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline / Scroll Storytelling -->
+    <section id="about-preview" class="section">
+      <div class="section-header fade-in">
+        <div class="section-badge">Our Journey Since 1998</div>
+        <h2>Timeline of Trust & Growth</h2>
+        <p class="section-desc">From a regional carrier to a major international airline — built on safety, comfort, and professional service. Real milestones, not marketing.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <h3>1998 — Founded in Amman</h3>
+            <p>Started with 2 Boeing 737-300, 12 destinations regional. Focus: safety first, IOSA from day one.</p>
+          </div>
+          <div class="timeline-year">1998</div>
+          <div></div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div></div>
+          <div class="timeline-year">2005</div>
+          <div class="timeline-content">
+            <h3>2005 — Fleet 15, First Wide-Body</h3>
+            <p>Introduced Boeing 767-300ER, opened London, Paris. Passenger count crossed 1M.</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <h3>2015 — International Hub</h3>
+            <p>AMM hub, 32 aircraft, 62 destinations, business class fully flat beds, lounge network.</p>
+          </div>
+          <div class="timeline-year">2015</div>
+          <div></div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div></div>
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">
+            <h3>2024 — 47 Aircraft, 89 Destinations</h3>
+            <p>12.4M passengers, 84,230 flights, average age 3.2 years, 99.2% on-time, Skytrax 4-Star.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px"><button class="btn btn-navy" onclick="goToPage('about')">Read Full Story →</button></div>
+    </section>
+
+    <!-- Fleet Preview -->
+    <section id="fleet" class="section section-alt">
+      <div class="section-header fade-in">
+        <div class="section-badge">Our Fleet — 47 Modern Aircraft</div>
+        <h2>Young, Efficient, Luxurious</h2>
+        <p class="section-desc">Average age 3.2 years. Boeing 787 Dreamliner with 32% lower fuel, Airbus A320neo quiet cabins. Every seat designed for comfort.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <div class="card-icon blue">✈️</div>
+          <h3>Boeing 787-9 Dreamliner — 12 aircraft</h3>
+          <p style="margin:8px 0 12px">298 seats, 7,565nm range, 20% larger windows, lower cabin altitude. Flagship for long-haul: London, New York, Bangkok.</p>
+          <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden"><div style="width:75%;height:100%;background:var(--primary)"></div></div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">12 aircraft • 298 seats • Average age 1.8y</div>
+        </div>
+        <div class="card fade-in" style="transition-delay:0.1s">
+          <div class="card-icon navy">🛩️</div>
+          <h3>Boeing 737-800 — 18 aircraft</h3>
+          <p style="margin:8px 0 12px">189 seats, workhorse for regional: Dubai, Cairo, Riyadh. 99.1% dispatch reliability.</p>
+          <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:var(--navy)"></div></div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">18 aircraft • 189 seats • Average age 4.1y</div>
+        </div>
+        <div class="card fade-in" style="transition-delay:0.2s">
+          <div class="card-icon blue">✈️</div>
+          <h3>Airbus A320neo — 10 aircraft</h3>
+          <p style="margin:8px 0 12px">180 seats, 50% quieter, 15% fuel saving. European network: Athens, Rome, Barcelona.</p>
+          <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden"><div style="width:55%;height:100%;background:var(--primary)"></div></div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">10 aircraft • 180 seats • Average age 2.4y</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px"><button class="btn" onclick="goToPage('fleet')">View Full Fleet Specs →</button></div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="section" style="background:var(--navy);color:white;text-align:center">
+      <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px">
+        <div class="fade-in"><div style="font-size:48px;font-family:var(--font-heading);font-weight:700" data-count="12.4" data-suffix="M+">0</div><div style="color:rgba(255,255,255,0.7);font-size:13px;letter-spacing:0.08em;text-transform:uppercase">Passengers 2024</div></div>
+        <div class="fade-in" style="transition-delay:0.1s"><div style="font-size:48px;font-family:var(--font-heading);font-weight:700" data-count="84230" data-suffix="">0</div><div style="color:rgba(255,255,255,0.7);font-size:13px;letter-spacing:0.08em;text-transform:uppercase">Flights Operated</div></div>
+        <div class="fade-in" style="transition-delay:0.2s"><div style="font-size:48px;font-family:var(--font-heading);font-weight:700" data-count="89" data-suffix="">0</div><div style="color:rgba(255,255,255,0.7);font-size:13px;letter-spacing:0.08em;text-transform:uppercase">Countries Served</div></div>
+        <div class="fade-in" style="transition-delay:0.3s"><div style="font-size:48px;font-family:var(--font-heading);font-weight:700" data-count="99.2" data-suffix="%">0</div><div style="color:rgba(255,255,255,0.7);font-size:13px;letter-spacing:0.08em;text-transform:uppercase">On-Time & Safety</div></div>
+      </div>
+    </section>
+
+    <!-- Accurate World Map -->
+    <section id="map" class="section">
+      <div class="section-header fade-in">
+        <div class="section-badge">Accurate Route Map — Amadeus Data</div>
+        <h2>89 Destinations — Robinson Projection</h2>
+        <p class="section-desc">Real lat/lng, great-circle routes, live prices from Amadeus API. Not scribbles — accurate aviation map like FlightRadar24.</p>
+      </div>
+      <div class="map-wrapper">
+        <div>
+          <div style="border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px;background:var(--paper)">
+            <div style="font-weight:700;font-size:14px;margin-bottom:8px">Top Destinations • Live</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-bottom:12px">Sorted by flights/week • Distance from AMM • Amadeus</div>
+            <div id="topList" style="display:flex;flex-direction:column;gap:8px"></div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <input id="mapSearch" placeholder="Search city or code..." style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;background:var(--paper);color:var(--text)" oninput="filterMap(this.value)">
+            <button class="btn" onclick="document.getElementById('mapSearch').value='';filterMap('')">Clear</button>
+          </div>
+        </div>
+        <div id="mapContainer" class="map-container fade-in">
+          <img src="assets/images/world-map-accurate.webp" alt="Accurate World Map Robinson Projection - airline route map" class="map-bg" width="2000" height="1000" loading="lazy">
+          <div id="mapOverlay" class="map-overlay"></div>
+        </div>
+      </div>
+      <div id="offersModal" style="display:none;position:fixed;inset:0;background:rgba(2,62,138,0.5);backdrop-filter:blur(4px);z-index:300;align-items:center;justify-content:center">
+        <div style="background:var(--paper);border-radius:16px;padding:24px;max-width:420px;width:90%;box-shadow:var(--shadow-lg)">
+          <h3>Offers to <span id="modalCity"></span> <span id="modalCode" style="color:var(--text-muted)"></span></h3>
+          <p style="margin:12px 0;font-size:14px">From <strong id="modalPrice"></strong> — Amadeus API live</p>
+          <div style="border:1px solid var(--border);border-radius:10px;padding:12px;margin:12px 0;font-size:13px;display:flex;justify-content:space-between"><span>QR104 • Direct • 4h15m • B787</span><strong>$489</strong></div>
+          <div style="display:flex;gap:8px"><button class="btn btn-primary" style="flex:1" onclick="goToPage('booking')">Book Now</button><button class="btn" onclick="document.getElementById('offersModal').style.display='none'">Close</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="section section-alt">
+      <div class="section-header fade-in">
+        <div class="section-badge">Pricing — Transparent & Fair</div>
+        <h2>Choose Your Comfort</h2>
+        <p class="section-desc">No hidden fees. Free changes 24h, 23kg baggage economy, lounge business.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in">
+          <h3>Economy</h3><div class="pricing-price" data-monthly="189">$189<span>/flight</span></div>
+          <ul style="list-style:none;padding:0;margin:16px 0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-muted)">
+            <li>✓ 31" pitch • 17.2" width</li><li>✓ Meal + 23kg bag</li><li>✓ Free change 24h</li>
+          </ul>
+          <button class="btn" style="width:100%" onclick="goToPage('booking')">Select Economy</button>
+        </div>
+        <div class="pricing-card popular fade-in" style="transition-delay:0.1s">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Business</h3><div class="pricing-price" data-monthly="890">$890<span>/flight</span></div>
+          <ul style="list-style:none;padding:0;margin:16px 0;display:flex;flex-direction:column;gap:8px;font-size:13px">
+            <li>✓ 60" flat-bed • 21" width</li><li>✓ À la carte • 2×32kg + lounge</li><li>✓ Priority • Fast track</li>
+          </ul>
+          <button class="btn btn-primary" style="width:100%" onclick="goToPage('booking')">Select Business</button>
+        </div>
+        <div class="pricing-card fade-in" style="transition-delay:0.2s">
+          <h3>First</h3><div class="pricing-price" data-monthly="2450">$2450<span>/flight</span></div>
+          <ul style="list-style:none;padding:0;margin:16px 0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-muted)">
+            <li>✓ Private suite • Chef</li><li>✓ 3×32kg + chauffeur</li><li>✓ Onboard shower (A380)</li>
+          </ul>
+          <button class="btn" style="width:100%" onclick="goToPage('booking')">Select First</button>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px"><button class="btn btn-ghost" onclick="goToPage('pricing')">View Full Comparison →</button></div>
+    </section>
+
+    <!-- Contact Preview + Map Embed -->
+    <section class="section">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+        <div class="fade-in">
+          <div class="section-badge">Contact Us</div>
+          <h2>We're Here 24/7</h2>
+          <p style="margin:12px 0 24px">Amman HQ, call center, or visit. Real humans, no bots. Average answer 18 seconds.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:12px"><div style="width:40px;height:40px;border-radius:10px;background:var(--primary-lightest);display:grid;place-items:center">📍</div><div><div style="font-weight:600;font-size:14px">Amman HQ</div><div style="font-size:13px;color:var(--text-muted)">Queen Alia Airport, Building 12, AMM 11118 Jordan</div></div></div>
+            <div style="display:flex;gap:12px"><div style="width:40px;height:40px;border-radius:10px;background:var(--primary-lightest);display:grid;place-items:center">📞</div><div><div style="font-weight:600;font-size:14px">+962 6 500 0000</div><div style="font-size:13px;color:var(--text-muted)">24/7 call center • English/Arabic</div></div></div>
+          </div>
+          <button class="btn btn-primary" style="margin-top:24px" onclick="goToPage('contact')">Contact Form →</button>
+        </div>
+        <div class="fade-in" style="transition-delay:0.1s">
+          <!-- Google Maps Embed - placeholder to avoid external errors, styled as map -->
+          <div class="map-embed">
+            <div class="map-embed-inner">
+              <div style="font-size:48px;margin-bottom:12px">🗺️</div>
+              <div style="font-weight:700;color:var(--text)">Queen Alia International Airport</div>
+              <div style="font-size:13px;margin-top:4px">AMM • 31.7226°N 35.9932°E • Hub since 1998</div>
+              <button class="btn" style="margin-top:12px" onclick="showBanner('Maps: AMM Hub - 89 destinations')">Open in Maps</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div class="logo-mark">✈</div><div><div style="font-family:var(--font-heading);font-size:18px;font-weight:700;color:white">SKYLINE</div><div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Fly in Safe, Comfort</div></div></div>
+        <p style="color:rgba(255,255,255,0.6);font-size:13px;max-width:320px">Major airline since 1998. 47 modern aircraft, 89 destinations, IOSA certified, 99.2% on-time. Professional and trustworthy luxury travel.</p>
+        <div class="social-links" style="margin-top:16px">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div><div style="font-weight:600;color:white;margin-bottom:12px">Explore</div><div class="footer-links"><a href="flights.html">Flights</a><a href="fleet.html">Our Fleet</a><a href="booking.html">Book Now</a><a href="pricing.html">Pricing</a></div></div>
+      <div><div style="font-weight:600;color:white;margin-bottom:12px">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#">Careers</a></div></div>
+      <div><div style="font-weight:600;color:white;margin-bottom:12px">Legal</div><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">IOSA Certificate</a><a href="#">Safety Report</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Skyline Airlines — Fly in Safe, Comfort • All rights reserved • Since 1998 • AMM Hub</div>
+      <div style="display:flex;gap:16px"><span>47 Aircraft</span><span>•</span><span>89 Destinations</span><span>•</span><span>12.4M Passengers</span></div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Scripts - Production-ready with comments -->
+  <script src="js/map.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate top destinations list - luxury theme
+    document.addEventListener('DOMContentLoaded', () => {
+      const top = DESTINATIONS.filter(d=>!d.hub).sort((a,b)=>b.flights-a.flights).slice(0,6);
+      const hub = DESTINATIONS.find(d=>d.hub);
+      const list = document.getElementById('topList');
+      if (!list) return;
+      list.innerHTML = top.map(d => {
+        const dist = Math.round(6371 * 2 * Math.asin(Math.sqrt(Math.sin((d.lat-hub.lat)*Math.PI/360)**2 + Math.cos(hub.lat*Math.PI/180)*Math.cos(d.lat*Math.PI/180)*Math.sin((d.lng-hub.lng)*Math.PI/360)**2)));
+        return `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'" onclick="document.querySelector('[data-code=${d.code}]')?.click()">
+          <div><div style="font-weight:700;font-size:13px">${d.city} <span style="background:var(--primary-lightest);color:var(--primary);padding:2px 6px;border-radius:6px;font-size:11px;margin-left:4px">${d.code}</span></div><div style="font-size:11px;color:var(--text-muted)">${dist} km • ${d.flights} flights/week</div></div>
+          <div style="text-align:right"><div style="color:var(--primary);font-weight:800;font-size:13px">$${d.price}</div><div style="font-size:10px;color:var(--text-muted)">${d.country}</div></div>
+        </div>`;
+      }).join('');
+    });
+  </script>
+</body>
+</html>

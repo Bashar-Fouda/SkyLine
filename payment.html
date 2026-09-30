@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment — Secure | Skyline Airlines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <div id="banner" class="banner"></div><div id="toast" class="toast"></div>
+  <nav class="navbar"><div class="navbar-brand"><div class="logo-mark">✈</div><div>SKYLINE</div></div><div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:var(--success)">✓ Flight</span><span style="background:var(--navy);color:white;padding:4px 10px;border-radius:999px">2. Payment</span><span style="color:var(--text-muted)">3. Ticket</span></div><div style="display:flex;gap:8px"><button class="btn" onclick="window.location.href='booking.html'">Back</button><button class="hamburger" id="hamburger" onclick="toggleSidenav()"><span></span><span></span><span></span></button></div></nav>
+  <div id="sidenavOverlay" class="sidenav-overlay" onclick="closeSidenav()"></div><aside id="sidenav" class="sidenav"><div class="sidenav-header"><div style="font-weight:700">SKYLINE</div><button class="btn" onclick="closeSidenav()">✕</button></div><div class="sidenav-links"><a href="index.html">🏠 Home</a><a href="payment.html" class="active">💳 Payment</a></div></aside>
+  <main style="padding-top:88px;max-width:1024px;margin:0 auto;padding:88px 24px 24px;display:grid;grid-template-columns:1fr 360px;gap:24px">
+    <div>
+      <h2 style="margin-bottom:20px">Passenger & Payment</h2>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;background:var(--paper)">
+        <h3 style="font-size:14px;margin-bottom:12px">Passenger Details</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="form-group" style="margin:0"><input placeholder="Full Name (as in passport)" class="form-input"></div>
+          <div class="form-group" style="margin:0"><input placeholder="Passport No" class="form-input"></div>
+          <div class="form-group" style="margin:0"><input placeholder="Email" type="email" class="form-input"></div>
+          <div class="form-group" style="margin:0"><input placeholder="Phone" class="form-input"></div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--paper)">
+        <h3 style="font-size:14px;margin-bottom:12px">Payment — Secure by Stripe • 256-bit SSL</h3>
+        <div style="display:flex;gap:8px;margin-bottom:12px;font-size:11px"><span style="border:1px solid var(--border);padding:4px 8px;border-radius:6px">VISA</span><span style="border:1px solid var(--border);padding:4px 8px;border-radius:6px">MC</span><span style="border:1px solid var(--border);padding:4px 8px;border-radius:6px">MADA</span><span style="color:var(--success)">🔒 Secure</span></div>
+        <input placeholder="Card 4242 4242 4242 4242" class="form-input" style="margin-bottom:12px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><input placeholder="MM/YY" class="form-input"><input placeholder="CVC" class="form-input"></div>
+      </div>
+    </div>
+    <div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--paper);position:sticky;top:88px">
+        <h3>Order Summary</h3>
+        <div style="margin:16px 0;font-size:13px;line-height:2">
+          <div style="display:flex;justify-content:space-between"><span>Base fare</span><span>$489</span></div>
+          <div style="display:flex;justify-content:space-between"><span>Taxes & fees</span><span>$67</span></div>
+          <div style="display:flex;justify-content:space-between"><span>Baggage</span><span style="color:var(--success)">Free</span></div>
+          <div style="display:flex;justify-content:space-between;font-weight:800;border-top:1px solid var(--border);margin-top:8px;padding-top:8px;font-size:16px"><span>Total</span><span>$556</span></div>
+        </div>
+        <button id="payButton" class="btn btn-primary" style="width:100%;height:52px;font-size:16px" onclick="this.textContent='Processing...';this.disabled=true;setTimeout(()=>{showBanner('Payment successful! Generating ticket');window.location.href='ticket.html'},1500)">Pay $556 Securely →</button>
+        <div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:8px">Encrypted • Stripe Secure • Free refund 24h • IOSA</div>
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

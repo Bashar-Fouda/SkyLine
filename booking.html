@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Now — Skyline Airlines | From $189</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <div id="banner" class="banner"></div><div id="toast" class="toast"></div>
+  <nav class="navbar"><div class="navbar-brand" onclick="goToPage('home')" style="cursor:pointer"><div class="logo-mark">✈</div><div class="brand-text"><div class="brand-title">SKYLINE</div><div class="brand-tagline">Fly in Safe, Comfort</div></div></div><div class="navbar-links"><a href="index.html">Home</a><a href="flights.html">Flights</a><a href="fleet.html">Fleet</a><a href="booking.html" class="active">Book Now</a></div><div class="navbar-actions"><button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">🌙</button><button class="hamburger" id="hamburger" onclick="toggleSidenav()"><span></span><span></span><span></span></button></div></nav>
+  <div id="sidenavOverlay" class="sidenav-overlay" onclick="closeSidenav()"></div><aside id="sidenav" class="sidenav"><div class="sidenav-header"><div style="display:flex;align-items:center;gap:10px;font-weight:700"><div class="logo-mark" style="width:32px;height:32px">✈</div> SKYLINE</div><button class="btn" style="width:36px;height:36px" onclick="closeSidenav()">✕</button></div><div class="sidenav-links"><a href="index.html">🏠 Home</a><a href="booking.html" class="active">🎫 Book Now</a><a href="pricing.html">💎 Pricing</a></div></aside>
+
+  <main style="padding-top:72px">
+    <div style="max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;gap:12px;font-size:12px;align-items:center"><span style="background:var(--navy);color:white;padding:4px 12px;border-radius:999px;font-weight:700">1. Flight</span><span style="color:var(--text-muted)">2. Passenger</span><span>→</span><span style="color:var(--text-muted)">3. Payment</span><span>→</span><span style="color:var(--text-muted)">4. Ticket</span></div>
+    <div class="booking-layout">
+      <aside class="filter-panel"><h3>Filters</h3><div style="margin:16px 0"><div style="font-weight:600;font-size:13px;margin-bottom:8px">Max Price: $<span id="priceVal">1000</span></div><input type="range" id="priceRange" min="100" max="1000" value="1000" style="width:100%" oninput="filterFlights()"></div><button class="btn" style="width:100%" onclick="clearFilters()">Clear Filters</button></aside>
+      <main><div style="display:flex;justify-content:space-between;margin-bottom:16px"><strong>AMM → DXB • Tomorrow</strong><span id="resultsCount" style="font-size:13px;color:var(--text-muted)">4 flights</span></div><div id="flightResults" style="display:flex;flex-direction:column;gap:12px"></div></main>
+      <aside><div id="bookingSummary" class="summary-sticky"><h3>Summary</h3><p style="font-size:13px;color:var(--text-muted);margin-top:8px">Select flight</p></div></aside>
+    </div>
+  </main>
+  <button id="backToTop" class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
